@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Poppins, system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  .text-gradient {
+    @apply text-transparent bg-clip-text 
+    bg-gradient-to-r from-[#fa76ed] via-[#0964ff] to-[#c6b0fa];
+  }
+  .text-lg-gradient {
+    @apply text-transparent bg-clip-text 
+    bg-gradient-to-r from-[#bf0e1a] via-[#f42734] to-[#0b14b4];
+  }
+  .text-lg-gradient-dark {
+    @apply text-transparent bg-clip-text 
+    bg-gradient-to-r from-[#ac0b16] via-[#f42734] to-[#0b14b4];
+  }
+  .text-gradient-dark {
+    @apply bg-gradient-to-r from-[#5121d4] via-[#0964ff] to-[#2b338f];
+  }
+  .text-gradient-ul {
+    @apply bg-gradient-to-r from-[#2c549a] via-[#0964ff] to-[#1f3a66];
+  }
+  .svg-color {
+    filter: invert(99%) sepia(2%) saturate(194%) hue-rotate(173deg)
+      brightness(114%) contrast(100%);
+  }
+  .svg-color-dark {
+    filter: invert(11%) sepia(99%) saturate(5416%) hue-rotate(352deg)
+      brightness(99%) contrast(96%);
+  }
+  .svg-cat {
+    @apply flex justify-center items-center border-[1px] rounded-full border-primary_red  
+    leading-none text-slate-800 dark:text-slate-100 font-normal m-[6px] hover:bg-primary_red 
+    hover:text-white transition-colors duration-200 ease-in
+    px-2 py-1 text-[12px] 
+    ss:px-3 ss:py-[6px] ss:text-[14px] 
+    sm:px-3 sm:py-[6px] sm:text-[16px] 
+    lg:px-3  lg:text-[16px] lg:m-2;
+  }
+  .svg-cat:hover .svg-cat-icon {
+    @apply text-white transition-colors duration-300 ease-in;
+  }
+  .search_input {
+    @apply block w-full rounded-md border dark:border-gray-800 border-white  
+    dark:bg-gray-800 bg-white py-[6px] pl-5 pr-12 text-sm text-black dark:text-white shadow-lg 
+    font-light dark:focus:border-black focus:border-white focus:outline-none focus:ring-0
+    ss:py-2.5;
+  }
+}
+.background-animate {
+  background-size: 200%;
+  -webkit-animation: TaxtAnimation 3s ease infinite;
+  -moz-animation: TaxtAnimation 3s ease infinite;
+  animation: TaxtAnimation 3s ease infinite;
+}
+
+@keyframes TaxtAnimation {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+  z-index: -10;
+}
+
+.main:before {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 0, #ffffff00 100%);
+  position: absolute;
+  content: "";
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.main:after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0.4;
+  filter: invert(1);
+}
+
+.gradient {
+  height: fit-content;
+  z-index: 3;
+  width: 100%;
+  max-width: 640px;
+  background-image: radial-gradient(
+      at 27% 37%,
+      hsla(215, 98%, 61%, 1) 0px,
+      transparent 0%
+    ),
+    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(at 52% 89%, rgba(236, 34, 54, 0.87) 0px, transparent 70%),
+    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 40px;
+  filter: blur(100px) saturate(150%);
+  opacity: 0.15;
+}
+
+.gradient-dark {
+  height: fit-content;
+  z-index: 3;
+  width: 100%;
+  max-width: 640px;
+  background-image: radial-gradient(
+      at 27% 37%,
+      rgb(10, 100, 227) 0px,
+      transparent 40%
+    ),
+    radial-gradient(at 97% 21%, rgba(19, 195, 10, 0.5) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, rgba(232, 4, 27, 0.5) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, rgba(222, 22, 212, 0.5) 0px, transparent 50%);
+
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  filter: blur(100px) saturate(150%);
+  top: 80px;
+  opacity: 0.15;
+}
+
+@media screen and (max-width: 640px) {
+  .main {
+    padding: 0;
+  }
+}
+
+/* Hamburger Menu */
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+.product {
+  animation: porfolioanimate 0.4s ease;
+}
+@keyframes porfolioanimate {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.product:hover .product-card {
+  transform: translateY(-100%);
+}
+
+.product:hover .product_detail {
+  opacity: 1;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 35%;
+  left: 0%;
+  width: 24px;
+  height: 2px;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+@media only screen and (max-width: 480px) {
+  .hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+    width: 23px;
+    height: 2px;
+  }
+  .hamburger-middle {
+    transform: translateY(6px);
+  }
+
+  .hamburger-bottom {
+    transform: translateY(12px);
+  }
+}
+
+.circle {
+  animation: scaleIn 4s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.5, 0.5);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(2.5, 2.5);
+    opacity: 0;
+  }
+}
+
+.servicescircle {
+  animation: circleanimation 4s linear infinite;
+}
+
+@keyframes circleanimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.popup {
+  transform: scale(0);
+  opacity: 0;
+
+  transition: all 500ms ease-in-out;
+}
+
+.popup.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  height: 12px;
+  width: 7px;
+  background: #222222;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #840808;
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: #840808;
+}
+.blog-post-h {
+  font-size: revert;
+  font-weight: revert;
+}
