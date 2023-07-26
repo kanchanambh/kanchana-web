@@ -45,6 +45,21 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="2QWXt-e8NfG4ZVW6O0AMWqtzy4OQeYbztCQ_s5rU400"
         />
+        <>
+          <Script
+            async="true"
+            src="https://www.googletagmanager.com/gtag/js?id=G-HECTX7X7B9"
+          />
+          <Script id="google-analytics">
+            {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-HECTX7X7B9');
+        `}
+          </Script>
+        </>
       </head>
       <body className="bg-gray-100 dark:bg-[#0e0e0e] ">
         <Provider>
