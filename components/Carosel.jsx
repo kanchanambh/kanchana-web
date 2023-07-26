@@ -64,11 +64,8 @@ const textAnimate = {
   },
 };
 
-const slidedd = [1, 2, 3, 4, 5];
-
 function MainCarosel() {
   const [current, setcurrent] = useState(0);
-  const { data: session } = useSession();
 
   const next = () => {
     setcurrent((current) => (current === slides.length - 1 ? 0 : current + 1));
