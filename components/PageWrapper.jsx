@@ -1,14 +1,7 @@
 "use client";
 
-import TransitionEffect from "./TransitionEffect";
-
 function PageWrapper({ children }) {
-  return (
-    <div>
-      <TransitionEffect />
-      {children}
-    </div>
-  );
+  return <div>{children}</div>;
 }
 
 export default PageWrapper;
