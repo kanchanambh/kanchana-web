@@ -36,7 +36,7 @@ const feedback = [
     name: "Benjamin",
     company: "Evolve",
     description:
-      "\u0022Exceptional graphic designer! Their creativity and attention to detail impressed us. Delivered outstanding work on time. Highly recommended\u0022",
+      "\u0022Exceptional graphic designer! Their creativity and attention to detail impressed us. Delivered outstanding work on time. Highly recommended.\u0022",
   },
   {
     id: 6,

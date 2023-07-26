@@ -27,8 +27,8 @@ const PortfoloSingel = ({ output }) => {
             <Image
               key={index}
               className="h-full w-full my-10 object-cover shadow-lg"
-              width={1000}
-              height={500}
+              width={400}
+              height={200}
               priority
               src={image}
               alt={output.title}
