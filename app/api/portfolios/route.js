@@ -19,7 +19,7 @@ export async function POST(req) {
     const res = await Portfolio.create({
       title: title,
       slug: slug,
-      featured: featured,
+      featured: featured || false,
       description: description,
       category: category,
       seo_title: seo_title,
