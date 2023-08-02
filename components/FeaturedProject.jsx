@@ -132,7 +132,7 @@ function FeaturedProject({ repoPort, repoCat }) {
                     height={350}
                     priority
                     src={portfolio.images[0]}
-                    alt="ddf"
+                    alt={portfolio.title}
                   />
                 </div>
 

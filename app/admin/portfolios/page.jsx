@@ -57,7 +57,7 @@ const PortfoliosPage = () => {
             Add new product
           </Link>
         </div>
-        <div className="pt-5">dddd</div>
+        <div className="pt-5">Portfolios</div>
       </div>
       <div className="flex flex-row justify-start items-start">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 mt-5 ">
