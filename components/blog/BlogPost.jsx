@@ -6,7 +6,7 @@ import React, { useState } from "react";
 const BlogPost = ({ blogPost, blogPostcat }) => {
   const [allBlogPost, setAllBlogPost] = useState(blogPost || []);
   const [allBlogCategory, setAllBlogCategory] = useState(blogPostcat || []);
-  console.log(allBlogCategory);
+
   return (
     <div className="text-white flex items-center justify-center w-full">
       <div className="w-full">

@@ -15,8 +15,6 @@ const SactionAnimate = {
 };
 
 function PortfolioByCategory({ repoPort, repoCat }) {
-  console.log(repoCat);
-  console.log(repoPort);
   const [searchText, setSearchText] = useState("");
 
   const [getPortfolios, setGetPortfolios] = useState(repoPort);

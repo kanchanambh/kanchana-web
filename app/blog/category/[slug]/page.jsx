@@ -46,7 +46,7 @@ const CategotyPage = async ({ params, searchParams }) => {
     process.env.BASE_URL + "/api/blog?catID=" + repoCat[0]._id
   );
   const blogPost = await BlogPostfetch.json();
-  console.log(blogPost);
+
   return (
     <PageWrapper>
       <div

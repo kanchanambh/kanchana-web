@@ -140,11 +140,10 @@ const Editpage = () => {
 
         if (response.ok) {
           const newImage = productInfo.images;
-          console.log("newImage", newImage);
           const finalImge = newImage.filter((im) => im !== seledted);
           setProductInfo({ ...productInfo, images: finalImge });
           updatedImages = finalImge;
-          console.log("updatedImages", updatedImages);
+
           return new Response(JSON.stringify("Done"), {
             status: 200,
           });

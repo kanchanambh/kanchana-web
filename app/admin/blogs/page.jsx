@@ -42,7 +42,6 @@ const BlogAdmin = () => {
       return;
     }
   };
-  console.log("getBlogPost", getBlogPost);
   return (
     <div className="p-10 dark:text-white w-[100%] m-auto">
       <div className="flex flex-col items-center justify-center ">

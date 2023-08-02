@@ -149,7 +149,7 @@ function PortfolioForm({
           />
         </div>
         <div>
-          <label htmlFor="">Meta Descriprion</label>
+          <label htmlFor="">Meta Description</label>
           <textarea
             value={productInfo.meta_description}
             onChange={(e) =>
