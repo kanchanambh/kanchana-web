@@ -26,7 +26,7 @@ export async function POST(req) {
       const filena = file.name.replace(/\s+/g, "_").toLowerCase();
       const ext = filena.split(".");
 
-      const fileName = `${ext[0]}_${new Date().getSeconds()}.${ext[1]}`;
+      const fileName = `${ext[0]}_${new Date()}.${ext[1]}`;
 
       // Read the file content as an ArrayBuffer
       const arrayBuffer = await file.arrayBuffer();
