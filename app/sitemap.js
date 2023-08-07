@@ -1,8 +1,6 @@
 export default async function sitemap() {
   const baseUrl = process.env.BASE_URL;
 
-  // Get All Posts from CMS
-
   const Portres = await fetch(process.env.BASE_URL + "/api/portfolios");
   const repoPort = await Portres.json();
 
