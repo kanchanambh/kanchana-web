@@ -1,11 +1,9 @@
 export default async function sitemap() {
-  //ddd
-  const Portres = await fetch(process.env.BASE_URL + "/api/portfolios");
-  const repoPort = await Portres.json();
+  const baseUrl = process.env.BASE_URL;
 
   return [
     {
-      url: process.env.BASE_URL,
+      url: baseUrl,
       lastModified: new Date(),
     },
   ];
