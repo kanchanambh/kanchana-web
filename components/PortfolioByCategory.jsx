@@ -86,13 +86,13 @@ function PortfolioByCategory({ repoPort, repoCat }) {
                 }}
                 className="product flex flex-col w-[340px]  transition-all duration-500
               ss:w-[340px] ss:mx-2-1 ss:mt-8
-              sm:w-[380px]
-              md:w-[380px] bg-primary_red dark:bg-slate-800 m-3  shadow-xl overflow-hidden"
+              sm:w-[385px]
+              md:w-[385px] bg-primary_red dark:bg-slate-800 m-3  shadow-xl overflow-hidden"
               >
                 <div
-                  className=" w-full h-[280px]
-              ss:h-[280px]
-              lg:h-[270px]
+                  className=" w-full h-[260px]
+              ss:h-[260px]
+              lg:h-[260px]
               "
                 >
                   <Image

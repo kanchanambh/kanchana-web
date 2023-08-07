@@ -37,8 +37,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 }
 
 const CategotyPage = async ({ params, searchParams }) => {
-  var cat = params.slug.toString().replace("-", " ");
-
+  var cat = params.slug.toString().replace(/-/g, " ");
   const Catres = await fetch(
     process.env.BASE_URL + "/api/categories?cat=" + cat
   );
