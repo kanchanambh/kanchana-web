@@ -56,12 +56,12 @@ const BlogByCat = ({ blogPost, blogPostcat }) => {
                 <div className="pt-5">
                   <div className="flex justify-between items-center pb-3">
                     <Link
-                      href={`/blog/category/${blog.category.category
+                      href={`/blog/category/${blog.category?.category
                         .toLowerCase()
                         .replace(/\s/g, "-")}`}
                     >
                       <p className="text-gradient dark:text-gradient-dark text-[16px] lg:text-[18px] w-fit font-bold">
-                        {blog.category.category}
+                        {blog.category?.category}
                       </p>
                     </Link>
                     <p
