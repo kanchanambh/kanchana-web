@@ -44,7 +44,7 @@ const NewBlogPost = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:3000/api/blog", {
+      const res = await fetch("/api/blog", {
         headers: {
           "Content-Type": "application/json",
         },
