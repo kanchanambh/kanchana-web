@@ -1,5 +1,4 @@
 import PageWrapper from "@components/PageWrapper";
-import BlogByCat from "@components/blog/BlogByCat";
 import React from "react";
 
 export const metadata = {
