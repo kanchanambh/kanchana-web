@@ -129,7 +129,6 @@ const EditBlogPost = () => {
       }
     } catch (error) {
       console.error("Error uploading files:", error);
-      // Handle any network or server errors
     }
   };
 
