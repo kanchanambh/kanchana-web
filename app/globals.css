@@ -290,6 +290,6 @@
   background: #840808;
 }
 .blogposth {
-  font-size: revert;
-  font-weight: revert;
+  font-size: revert !important;
+  font-weight: revert !important;
 }
