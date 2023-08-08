@@ -15,6 +15,7 @@ export const metadata = {
     "React",
     "JavaScript",
     "graphic design",
+    "graphic designer",
     "full stack development",
     "web design",
     "UI/UX",
