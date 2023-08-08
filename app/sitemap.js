@@ -12,7 +12,7 @@ export default async function sitemap() {
 
   const blogscat = await fetch(process.env.BASE_URL + "/api/blogCategories");
   const blogPostcat = await blogscat.json();
-
+  //function
   const postsUrls =
     repoPort?.map((post) => {
       return {
