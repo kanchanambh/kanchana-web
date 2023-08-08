@@ -51,6 +51,12 @@
     font-light dark:focus:border-black focus:border-white focus:outline-none focus:ring-0
     ss:py-2.5;
   }
+  ul {
+    @apply list-disc p-[revert] m-[revert];
+  }
+  ol {
+    @apply list-decimal p-[revert] m-[revert];
+  }
 }
 .background-animate {
   background-size: 200%;

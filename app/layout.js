@@ -59,6 +59,11 @@ export default function RootLayout({ children }) {
           gtag('config', 'G-HECTX7X7B9');
         `}
           </Script>
+          <Script
+            async="true"
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7747990776554843"
+            crossorigin="anonymous"
+          />
         </>
       </head>
       <body className="bg-gray-100 dark:bg-[#0e0e0e] ">
