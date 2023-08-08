@@ -73,7 +73,7 @@ const BlogByCat = ({ blogPost, blogPostcat }) => {
                     </p>
                   </div>
                   <Link href={"/blog/" + blog.slug}>
-                    <p className="text-[18px] xs:text-[20px] lg:text-[22px]">
+                    <p className="text-[18px] xs:text-[20px] lg:text-[22px] text-primary_red">
                       {blog.title}
                     </p>
                   </Link>
