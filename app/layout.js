@@ -46,6 +46,10 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="2QWXt-e8NfG4ZVW6O0AMWqtzy4OQeYbztCQ_s5rU400"
         />
+        <meta
+          name="simpledcver"
+          content="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkb21haW4iOiJrYW5jaGFuYWhlcmF0aC5jb20iLCJleHAiOjE2OTIxNDQwMDB9.anr4D90XIeaNcEY64F1_5dIwq8oLqWq3Hfw5VutlODs"
+        ></meta>
         <>
           <Script
             async="true"
