@@ -54,6 +54,27 @@ export default async function sitemap() {
       url: baseUrl,
       lastModified: new Date(),
     },
+    {
+      url: `${baseUrl}/portfolios`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/portfolios/category`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/blog/category`,
+      lastModified: new Date(),
+    },
+
     ...postsUrls,
     ...categoriesUrls,
     ...blogssUrls,
