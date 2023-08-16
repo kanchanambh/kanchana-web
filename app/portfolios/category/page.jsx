@@ -53,7 +53,7 @@ const CategoryPage = async () => {
           xs:text-[40px]
           "
           >
-            Showcasing My Creative Journey: Past Projects as a{" "}
+            Showcasing My Creative Journey: Past Projects as{" "}
             <span className="text-gradient dark:text-gradient-dark background-animate">
               {" "}
               Graphic Designer & Full Stack Developer
