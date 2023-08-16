@@ -73,7 +73,7 @@ const CategotyPage = async ({ params, searchParams }) => {
           xs:text-[40px]
           "
           >
-            Showcasing Past Projects as a{" "}
+            Showcasing Past Projects as{" "}
             <span className="text-gradient dark:text-gradient-dark background-animate">
               {repoCat.map((cat) => cat.name)}
             </span>
