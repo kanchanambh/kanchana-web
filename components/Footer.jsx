@@ -20,79 +20,7 @@ function Footer() {
           alt="gg"
         />
       </div>
-      <div
-        className="p-5 flex flex-row space-x-3
-      sm:pt-8 sm:space-x-5
-      md:pt-5 md:space-x-8
-      lg:space-x-10
-      "
-      >
-        <a target="_blank" href="https://www.behance.net/kanchanaherath">
-          <Image
-            id="imghe"
-            className="cursor-pointer w-7 h-7
-          sm:w-10 sm:h-10
-          lg:w-10 lg:h-10"
-            width={40}
-            height={40}
-            src={"/svg-icon/behance-Icon.svg"}
-            alt="behance-Icon"
-          />
-        </a>
 
-        <a target="_blank" href="https://dribbble.com/kanchanaherath">
-          <Image
-            id="imghe"
-            className="cursor-pointer w-7 h-7
-          sm:w-10 sm:h-10
-          lg:w-10 lg:h-10"
-            width={40}
-            height={40}
-            src={"/svg-icon/Dribbble-Icon.svg"}
-            alt="Dribbble-Icon"
-          />
-        </a>
-
-        <a target="_blank" href="https://www.pinterest.com/kanchanambherath">
-          <Image
-            id="imghe"
-            className="cursor-pointer w-7 h-7
-          sm:w-10 sm:h-10
-          lg:w-10 lg:h-10"
-            width={40}
-            height={40}
-            src={"/svg-icon/pinterest-Icon.svg"}
-            alt="pinterest-Icon"
-          />
-        </a>
-        <a target="_blank" href="https://www.linkedin.com/in/kanchana-herath">
-          <Image
-            id="imghe"
-            className="cursor-pointer w-7 h-7
-          sm:w-10 sm:h-10
-          lg:w-10 lg:h-10"
-            width={40}
-            height={40}
-            src={"/svg-icon/linkedin-Icon.svg"}
-            alt="linkedin-Icon"
-          />
-        </a>
-        <a
-          target="_blank"
-          href="https://www.instagram.com/kanchanambherath/?hl=en"
-        >
-          <Image
-            id="imghe"
-            className="cursor-pointer w-7 h-7
-          sm:w-10 sm:h-10
-          lg:w-10 lg:h-10"
-            width={40}
-            height={40}
-            src={"/svg-icon/instagram-Icon.svg"}
-            alt="instagram-Icon"
-          />
-        </a>
-      </div>
       <div
         className="p-4 space-x-2
         sm:space-x-10
