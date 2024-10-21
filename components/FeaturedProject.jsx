@@ -23,21 +23,29 @@ function FeaturedProject({ repoPort, repoCat }) {
   const [selectedId, setSelectedId] = useState(null);
   const [selectedItem, setSelectedIdtem] = useState([]);
 
-  const filterPortfolios = (cat) => {
+  const filterPortfolios = (cat, parent) => {
     if (cat === "all") {
       setGetPortfolios(savedPortfolios);
     } else {
       const regex = new RegExp(cat, "i");
-      const result = savedPortfolios.filter((curData) => {
-        return regex.test(curData.category.name);
-      });
+
+      let result;
+      if (parent) {
+        // If parent is provided, filter portfolios by both category and parent name
+        const catRegex = new RegExp(cat, "i");
+        result = savedPortfolios.filter((curData) =>
+          catRegex.test(curData.category.name)
+        );
+      } else {
+        // If no parent, filter only by category
+        const catRegex = new RegExp(cat, "i");
+        result = savedPortfolios.filter((curData) =>
+          catRegex.test(curData.category.parent.name)
+        );
+      }
+
       setGetPortfolios(result);
     }
-  };
-
-  const handleSearchChange = (e) => {
-    setSearchText(e.target.value);
-    filterPortfolios(e.target.value);
   };
 
   return (
@@ -72,7 +80,9 @@ function FeaturedProject({ repoPort, repoCat }) {
             <button
               key={cat._id}
               className="svg-cat "
-              onClick={() => filterPortfolios(cat.name)}
+              onClick={() =>
+                filterPortfolios(cat.name, cat.parent?.name || null)
+              }
             >
               <CheckBadgeIcon
                 className="svg-cat-icon h-4 w-4 py-0
@@ -87,18 +97,7 @@ function FeaturedProject({ repoPort, repoCat }) {
         className="w-[85%] pt-5
           xs:w-[40%]
           ss:w-[85%]"
-      >
-        <form className="relative w-full flex-center">
-          <input
-            type="text"
-            placeholder="Search Project"
-            value={searchText}
-            onChange={handleSearchChange}
-            required
-            className="search_input"
-          />
-        </form>
-      </div>
+      ></div>
       <div className="">
         <div
           className=" w-full flex flex-wrap mx-auto mt-10 text-primary_red 
