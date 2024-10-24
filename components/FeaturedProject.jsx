@@ -24,6 +24,8 @@ function FeaturedProject({ repoPort, repoCat }) {
   const [selectedItem, setSelectedIdtem] = useState([]);
 
   const filterPortfolios = (cat, parent) => {
+    console.log(parent);
+    console.log(cat);
     if (cat === "all") {
       setGetPortfolios(savedPortfolios);
     } else {
@@ -31,16 +33,18 @@ function FeaturedProject({ repoPort, repoCat }) {
 
       let result;
       if (parent) {
-        // If parent is provided, filter portfolios by both category and parent name
+        // If  category
         const catRegex = new RegExp(cat, "i");
         result = savedPortfolios.filter((curData) =>
-          catRegex.test(curData.category.name)
+          curData.category.some((category) => catRegex.test(category.name))
         );
       } else {
-        // If no parent, filter only by category
+        // If  parent,
         const catRegex = new RegExp(cat, "i");
         result = savedPortfolios.filter((curData) =>
-          catRegex.test(curData.category.parent.name)
+          curData.category.some((category) =>
+            catRegex.test(category.parent.name)
+          )
         );
       }
 
@@ -119,22 +123,23 @@ function FeaturedProject({ repoPort, repoCat }) {
               sm:w-[380px]
               md:w-[380px] bg-primary_red dark:bg-slate-800 m-3  shadow-xl overflow-hidden"
               >
-                <div
-                  className=" w-full h-[280px]
+                {portfolio.images && (
+                  <div
+                    className=" w-full h-[280px]
               ss:h-[280px]
               lg:h-[270px]
               "
-                >
-                  <Image
-                    className="h-full w-full  object-cover"
-                    width={500}
-                    height={350}
-                    priority
-                    src={portfolio.images[0]}
-                    alt={portfolio.title}
-                  />
-                </div>
-
+                  >
+                    <Image
+                      className="h-full w-full  object-cover"
+                      width={500}
+                      height={350}
+                      priority
+                      src={portfolio.images[0]}
+                      alt={portfolio.title}
+                    />
+                  </div>
+                )}
                 <div className="relative ">
                   <div
                     className="product-card pt-0 absolute h-fit pb-3 bottom-0-0 left-0 right-0 bg-primary_red  transition-transform ease-out duration-300  

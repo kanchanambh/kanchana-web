@@ -12,7 +12,7 @@ const NewPorfolios = () => {
     slug: "",
     featured: "",
     description: "",
-    category: "",
+    category: [],
     seo_title: "",
     meta_description: "",
     images: [],
@@ -37,6 +37,7 @@ const NewPorfolios = () => {
     };
 
     try {
+      console.log(data);
       const res = await fetch("/api/portfolios", {
         headers: {
           "Content-Type": "application/json",

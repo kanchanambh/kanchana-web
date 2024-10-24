@@ -12,7 +12,7 @@ const Editpage = () => {
     slug: "",
     featured: false,
     description: "",
-    category: "",
+    category: [],
     seo_title: "",
     meta_description: "",
     images: [],

@@ -15,6 +15,26 @@ function PortfolioForm({
   const [categories, setCategories] = useState([]);
   const [isChecked, setIsChecked] = useState(false);
 
+  const handleAddCategory = (ev) => {
+    const selectedCategory = ev.target.value;
+
+    if (selectedCategory && !productInfo.category.includes(selectedCategory)) {
+      setProductInfo({
+        ...productInfo,
+        category: [...productInfo.category, selectedCategory],
+        selectedCategories: "",
+        // Reset the select box after adding
+      });
+    }
+  };
+  // Function to remove a category
+  const handleRemoveCategory = (categoryId) => {
+    setProductInfo({
+      ...productInfo,
+      category: productInfo.category.filter((id) => id !== categoryId),
+    });
+  };
+
   useEffect(() => {
     fetchCategories();
   }, []);
@@ -112,12 +132,10 @@ function PortfolioForm({
         <div className="flex flex-col">
           <label htmlFor="">Category</label>
           <select
-            name=""
-            id=""
-            value={productInfo.category}
-            onChange={(ev) =>
-              setProductInfo({ ...productInfo, category: ev.target.value })
-            }
+            name="category"
+            id="category"
+            value={productInfo.category[0]}
+            onChange={handleAddCategory}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
           focus:ring-blue-500 focus:border-blue-500 block w-max p-[2px]
           dark:bg-gray-700 dark:border-gray-300 dark:placeholder-green-600-400 
@@ -135,6 +153,34 @@ function PortfolioForm({
                 // }
               })}
           </select>
+          <button
+            type="button"
+            onClick={handleAddCategory}
+            className="mt-2 bg-blue-500 text-white px-4 py-1 rounded"
+          >
+            Add Category
+          </button>
+
+          <div className="mt-4">
+            <h3>Selected Categories:</h3>
+            <ul>
+              {productInfo.category && productInfo.category.length > 0 ? (
+                productInfo.category.map((categoryId, index) => (
+                  <li key={index}>
+                    {categories.find((cat) => cat._id === categoryId)?.name}
+                    <button
+                      onClick={() => handleRemoveCategory(categoryId)}
+                      className="ml-2 bg-red-500 text-white px-2 py-1 my-2 rounded"
+                    >
+                      Remove
+                    </button>
+                  </li>
+                ))
+              ) : (
+                <p>No categories added yet</p>
+              )}
+            </ul>
+          </div>
         </div>
         <div>
           <label htmlFor="">SEO Title</label>

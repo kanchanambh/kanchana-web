@@ -16,10 +16,12 @@ const PortfolioSchema = new Schema({
   description: {
     type: String,
   },
-  category: {
-    type: Schema.Types.ObjectId,
-    ref: "Category",
-  },
+  category: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Category",
+    },
+  ],
   seo_title: {
     type: String,
   },

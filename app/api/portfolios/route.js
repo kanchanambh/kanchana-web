@@ -1,7 +1,7 @@
 import { connectToDB } from "@/lib/database";
 import { NextResponse } from "next/server";
-import Portfolio from "@models/Portfolio";
 
+import Portfolio from "@models/Portfolio";
 export async function POST(req) {
   try {
     connectToDB().catch((err) => NextResponse.json(err));
@@ -16,6 +16,7 @@ export async function POST(req) {
       images,
     } = await req.json();
 
+    console.log(req.json());
     const res = await Portfolio.create({
       title: title,
       slug: slug,
@@ -24,7 +25,7 @@ export async function POST(req) {
       category: category,
       seo_title: seo_title,
       meta_description: meta_description,
-      images: images,
+      images: images || null,
     });
     return new Response(JSON.stringify(res), { status: 200 });
   } catch (error) {
