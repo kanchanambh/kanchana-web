@@ -16,7 +16,6 @@ export async function POST(req) {
       images,
     } = await req.json();
 
-    console.log(req.json());
     const res = await Portfolio.create({
       title: title,
       slug: slug,

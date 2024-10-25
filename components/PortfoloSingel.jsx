@@ -13,7 +13,6 @@ const PortfoloSingel = ({ output }) => {
         lg:w-[80%] lg:text-[48px] lg:pb-10
 "
       >
-        Showcasing My Creative Journey:{" "}
         <span className="text-gradient dark:text-gradient-dark background-animate">
           {output.title}
         </span>
