@@ -18,7 +18,7 @@ const PortfoliosPage = () => {
       return new Response(JSON.stringify(error.message), { status: 500 });
     }
   }
-
+  console.log(getPortfolios);
   const deletePortfolio = async (e, id) => {
     let text = "Press a button!\nEither OK or Cancel.";
     if (confirm(text) == true) {
@@ -112,7 +112,7 @@ const PortfoliosPage = () => {
                   <td className="px-6 py-3">
                     <img
                       className="w-auto h-12 object-cover"
-                      src={portfolio.images[0]}
+                      src={portfolio.image ? portfolio.images[0] : undefined}
                     />
                   </td>
 
