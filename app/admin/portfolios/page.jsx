@@ -85,7 +85,7 @@ const PortfoliosPage = () => {
                   <td className="px-6 py-3">
                     {portfolio.description.substring(0, 15)}
                   </td>
-                  <td className="px-6 py-3">{portfolio.category?.name}</td>
+                  <td className="px-6 py-3">{portfolio.category[0]?.name}</td>
                   <td className="px-6 py-3">
                     {" "}
                     <label className="relative inline-flex items-center cursor-not-allowed">
