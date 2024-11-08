@@ -22,10 +22,9 @@ function FeaturedProject({ repoPort, repoCat }) {
 
   const [selectedId, setSelectedId] = useState(null);
   const [selectedItem, setSelectedIdtem] = useState([]);
+ 
 
   const filterPortfolios = (cat, parent) => {
-    console.log(parent);
-    console.log(cat);
     if (cat === "all") {
       setGetPortfolios(savedPortfolios);
     } else {
@@ -119,9 +118,9 @@ function FeaturedProject({ repoPort, repoCat }) {
                   setSelectedIdtem(portfolio);
                 }}
                 className="product flex flex-col w-[340px]  transition-all duration-500
-              ss:w-[340px] ss:mx-2-1 ss:mt-8
-              sm:w-[380px]
-              md:w-[380px] bg-primary_red dark:bg-slate-800 m-3  shadow-xl overflow-hidden"
+              ss:w-[380px] ss:mx-2-1 ss:mt-8
+              sm:w-[400px]
+              md:w-[400px] bg-primary_red dark:bg-slate-800 m-2  shadow-xl overflow-hidden"
               >
                 {portfolio.images && (
                   <div

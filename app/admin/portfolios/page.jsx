@@ -18,7 +18,7 @@ const PortfoliosPage = () => {
       return new Response(JSON.stringify(error.message), { status: 500 });
     }
   }
-  console.log(getPortfolios);
+
   const deletePortfolio = async (e, id) => {
     let text = "Press a button!\nEither OK or Cancel.";
     if (confirm(text) == true) {

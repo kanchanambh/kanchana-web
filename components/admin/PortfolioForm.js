@@ -153,13 +153,6 @@ function PortfolioForm({
                 // }
               })}
           </select>
-          <button
-            type="button"
-            onClick={handleAddCategory}
-            className="mt-2 bg-blue-500 text-white px-4 py-1 rounded"
-          >
-            Add Category
-          </button>
 
           <div className="mt-4">
             <h3>Selected Categories:</h3>

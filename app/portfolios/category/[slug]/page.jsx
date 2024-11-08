@@ -37,28 +37,49 @@ export async function generateMetadata({ params, searchParams }, parent) {
 }
 
 const CategotyPage = async ({ params, searchParams }) => {
+ 
   var cat = params.slug.toString().replace(/-/g, " ");
   const Catres = await fetch(
     process.env.BASE_URL + "/api/categories?cat=" + cat
   );
+  
   const repoCat = await Catres.json();
   const Portfolio = await fetch(process.env.BASE_URL + "/api/portfolios");
   const portAll = await Portfolio.json();
+  let catList = {
+    cat: repoCat[0].name,  
+    parent: repoCat[0].parent?.name || null  
+  }
+
+  Object.keys(catList).forEach(key => {
+    if(catList[key] != null){
+    catList[key] = catList[key].toLowerCase().toString();
+  }
+  });
 
   var filterdPort = "";
-  const filterPortfolios = (cat) => {
-    const regex = new RegExp(cat, "i");
-    const result = portAll.filter((curData) => {
-      if (cat == curData.category.parent.name) {
-        return regex.test(curData.category.parent.name);
-      } else {
-        return regex.test(curData.category.name);
+  
+  const filterPortfolios = (catList) => {
+   
+   
+    if(catList.parent != null){
+    const catRegex = new RegExp(catList.cat, "i");
+    filterdPort = portAll.filter((curData) =>
+          curData.category.some((category) => catRegex.test(category.name))
+        );
+      }else{
+        // If  parent,
+        const catRegex = new RegExp(catList.cat, "i");
+        
+        filterdPort = portAll.filter((curData) =>
+          curData.category.some((category) =>
+            catRegex.test(category.parent.name)
+          )
+        );
       }
-    });
-    filterdPort = result;
   };
 
-  filterPortfolios(repoCat[0].name);
+  filterPortfolios(catList);
   return (
     <PageWrapper>
       <div
